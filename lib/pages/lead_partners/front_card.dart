@@ -154,6 +154,19 @@ class _FrontCardState extends State<FrontCard> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 70.0, left: 150.0, right: 8.0),
+              child: Container(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    FlatButton(
+                      child: Text("Clique para ver mais"),
+                    ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

@@ -22,9 +22,9 @@ class _HomeState extends State<Home> {
   Widget callPage(int currentIndex){
     switch (currentIndex){
       case 0: return MyIndications(token: widget.token, is_partner: widget.is_partner);
-      case 2: return Sim.Simulation(token: widget.token, is_partner: widget.is_partner,);
+      case 1: return Indication(token: widget.token, is_partner: widget.is_partner);
       break;
-      case 1: return Financing(token: widget.token, is_partner: widget.is_partner);
+      case 2: return Sim.Simulation(token: widget.token, is_partner: widget.is_partner,);
       break;
 //      case 2: return Refinancing(token: widget.token, is_partner: widget.is_partner);
 //      break;

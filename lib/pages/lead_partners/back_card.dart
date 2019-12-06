@@ -81,137 +81,145 @@ class _BackCardState extends State<BackCard> {
                 borderRadius: BorderRadius.circular(3.0),
               ),
             ),
-            Column(
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
-                  child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(child: Icon(Icons.phone)),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Container(
-                              child: Text(
-                                widget.lead['phone'],
-                                style: TextStyle(
-                                  fontSize: 20.0,
+            Container(
+              width: MediaQuery.of(context).size.width,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
+                      child: Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Container(child: Icon(Icons.phone)),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Container(
+                                  child: Text(
+                                    widget.lead['phone'],
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
-                  child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(child: Icon(Icons.phone_android)),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Container(
-                              child: Text(
-                                widget.lead['celphone'],
-                                style: TextStyle(
-                                  fontSize: 20.0,
+                            ],
+                          )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
+                      child: Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Container(child: Icon(Icons.phone_android)),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Container(
+                                  child: Text(
+                                    widget.lead['celphone'],
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
-                  child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(child: Icon(Icons.location_city)),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Container(
-                              child: Text(
-                                widget.lead['city'] +" ("+widget.lead['state']+")",
-                                style: TextStyle(
-                                  fontSize: 20.0,
+                            ],
+                          )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
+                      child: Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Container(child: Icon(Icons.location_city)),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Container(
+                                  child: Text(
+                                    widget.lead['city'] +" ("+widget.lead['state']+")",
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
-                  child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(child: Icon(Icons.undo )),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Container(
-                              child: Text(
-                                'R\$ '+ partner_comission_min.output.nonSymbol +' até R\$ '+partner_comission_max.output.nonSymbol ,
-                                style: TextStyle(
-                                  fontSize: 20.0,
+                            ],
+                          )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
+                      child: Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Container(child: Icon(Icons.undo )),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Container(
+                                  child: Text(
+                                    'R\$ '+ partner_comission_min.output.nonSymbol +' até R\$ '+partner_comission_max.output.nonSymbol ,
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
-                  child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(child: Icon(Icons.attach_money )),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Container(
-                              child: Text(
-                                'R\$ '+desired_value.output.nonSymbol,
-                                style: TextStyle(
-                                  fontSize: 20.0,
+                            ],
+                          )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
+                      child: Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Container(child: Icon(Icons.attach_money )),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Container(
+                                  child: Text(
+                                    'R\$ '+desired_value.output.nonSymbol,
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
-                  child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          Container(child: Icon(Icons.timer )),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Container(
-                              child: Text(
-                                widget.lead['desired_period'] + ' meses',
-                                style: TextStyle(
-                                  fontSize: 20.0,
+                            ],
+                          )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
+                      child: Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Container(child: Icon(Icons.timer )),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8.0),
+                                child: Container(
+                                  child: Text(
+                                    widget.lead['desired_period'] + ' meses',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
+                            ],
+                          )),
+                    ),
 
-              ],
-            ),
+                  ],
+                ),
+              ),
+            )
           ],
         ),
       ),

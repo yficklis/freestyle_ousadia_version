@@ -42,6 +42,30 @@ class _RefinancingState extends State<Refinancing> {
     return Scaffold(
         backgroundColor: Colors.white,
         resizeToAvoidBottomPadding: true,
+        appBar: AppBar(
+          iconTheme: new IconThemeData(color: Colors.lightBlueAccent),
+          centerTitle: true,
+          backgroundColor: Colors.grey[50],
+          elevation: 5.0,
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(10.0),
+            child: Container(color: Colors.grey[50], height: 0.0,),
+          ),
+          title: Padding(
+            padding: EdgeInsets.only(top: 15.0, left: 5.0, right: 5.0, bottom: 15.0),
+            child: Center(
+                child: Image.asset('assets/logo2.png')
+            ),
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.exit_to_app),
+              onPressed: (){
+                Navigator.pushReplacementNamed(context, 'login');
+              },
+            )
+          ],
+        ),
         body: Stack(
         fit: StackFit.expand,
           children: <Widget>[

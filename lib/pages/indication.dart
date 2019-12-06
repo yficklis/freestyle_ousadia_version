@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:freestyle_ousadia_version/pages/financing.dart';
+import 'package:freestyle_ousadia_version/pages/refinancing.dart';
 
 
 class Indication extends StatefulWidget {
@@ -39,84 +41,59 @@ class _IndicationState extends State<Indication> {
               Image.asset('assets/image_02.png'),
             ],
           ),
-          Center(
-            child: Container(
-                margin: EdgeInsets.only(top: 20.0),
-                child: new FormBuilder(
-                  key: _formKey,
-                  autovalidate: true,
-                  initialValue: {
-                    'type': 'Para comprar um imóvel',
-                  },
-                  child: new ListView(children: <Widget>[
-
-                    new Stepper(
-                      physics: ScrollPhysics(),
-                      steps: _mySteps(),
-                      type: StepperType.vertical,
-                      currentStep: this.currStep,
-                      onStepContinue: () {
-                        setState(() {
-                          if (currStep < _mySteps().length - 1) {
-                            currStep = currStep + 1;
-                          } else {
-                            currStep = 0;
-                          }
-                        });
-                      },
-                      onStepCancel: () {
-                        setState(() {
-                          if (currStep > 0) {
-                            currStep = currStep - 1;
-                          } else {
-                            currStep = 0;
-                          }
-                        });
-                      },
-                      onStepTapped: (step) {
-                        setState(() {
-                          currStep = step;
-                        });
-                      },
-                      controlsBuilder: (BuildContext context,
-                          {VoidCallback onStepContinue,
-                            VoidCallback onStepCancel}) {
-                        if(currStep == 0){
-                          return Row(
-                            children: <Widget>[
-                              FlatButton(
-                                onPressed: _submitDetails,
-                                color: Colors.lightBlueAccent,
-                                child: Text(
-                                  'Próximo',
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                              ),
-                              FlatButton(
-                                child: null,
-                                onPressed: onStepCancel,
-                              ),
-                            ],
-                          );
-                        }
-                        return Row(
-                          children: <Widget>[
-                            FlatButton(
-                              child: Text("Próximo"),
-                              onPressed: onStepContinue,
+          SingleChildScrollView(
+              child: Center(
+                child: Container(
+                  margin: EdgeInsets.only(top: 130.0),
+                  child: Column(
+                    children: <Widget>[
+                      FlatButton(
+                        onPressed: (){
+                          Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new Financing(is_partner: widget.is_partner, token: widget.token,)));
+                        },
+                        child: Container(
+                          height: 70,
+                          width: 350,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(92, 192, 208, 82),
+                          ),
+                          child: Center(
+                            child: Text(
+                              'Financiamento',
+                              style: TextStyle(
+                                  fontSize: 30.0,
+                                  color: Colors.white),
                             ),
-                            FlatButton(
-                              child: Text("Voltar"),
-                              onPressed: onStepCancel,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 50,
+                      ),
+                      FlatButton(
+                        onPressed: (){
+                          Navigator.of(context).push(new MaterialPageRoute(builder: (BuildContext context) => new Refinancing(is_partner: widget.is_partner, token: widget.token,)));
+                        },
+                        child: Container(
+                          height: 70,
+                          width: 350,
+                          decoration: BoxDecoration(
+                              color: Color.fromRGBO(92, 192, 208, 82)),
+                          child: Center(
+                            child: Text(
+                              'Refinanciamento',
+                              style: TextStyle(
+                                  fontSize: 30.0,
+                                  color: Colors.white),
                             ),
-                          ],
-                        );
-                      },
-                    ),
-
-                  ]),
-                )),
-          )
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+          ),
         ],
       ),
     );
@@ -143,28 +120,6 @@ class _IndicationState extends State<Indication> {
               }
             }
           )
-//          new FormBuilderDropdown(
-//            onChanged: (void val){
-//              if(_formKey.currentState.fields['type'].currentState.value.toString() == "Para comprar um imóvel"){
-//                print("COMPRAR");
-//              }
-//              else{
-//                print('REFINANCIAR');
-//              }
-//            } ,
-//            attribute: "type",
-//            decoration: InputDecoration(
-//              hintStyle: TextStyle(color: Colors.grey, fontSize: 12.0),
-//            ),
-//            validators: [
-//              FormBuilderValidators.required(
-//                  errorText: "Por favor, Selecione um tipo de empréstimo!")
-//            ],
-//            items: ['Para comprar um imóvel', 'Imóvel de garantia']
-//                .map(
-//                    (type) => DropdownMenuItem(value: type, child: Text("$type")))
-//                .toList(),
-//          )
       ),
     ];
     return steps;
